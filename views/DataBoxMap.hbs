@@ -1,0 +1,41 @@
+   var mapObj = new GMaps({
+        el: '#map',
+        lat: {{lat1}},
+        lng: {{lon1}}
+      });
+	  mapObj.setZoom(11);
+	  
+	/**/
+	  path=[[{{lat1}},{{lon1}}],[{{lat2}},{{lon2}}]];
+	  
+	
+	mapObj.drawPolyline({
+	  path: path,
+	  strokeColor: '#131540',
+	  strokeOpacity: 0.6,
+	  strokeWeight: 6
+	});	  
+   /* */
+
+	var d = mapObj.addMarker({
+	    lat: {{lat1}},
+	    lng: {{lon1}},
+	    opacity:0.6,
+	  title: 'DataBox',
+	  infoWindow: {
+	    content: '<h4>DataBox first localisation</h4><div>Montreal, Canada</div>',
+	    maxWidth: 100
+	  }
+	});
+    
+	var e = mapObj.addMarker({
+	    lat: {{lat2}},
+	    lng: {{lon2}},
+	  title: 'DataBox',
+	  infoWindow: {
+	    content: '<h4>DataBox last localisation</h4><div>Montreal, Canada</div>',
+	    maxWidth: 100
+	  }
+	});
+	e.setAnimation(google.maps.Animation.DROP);
+
