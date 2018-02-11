@@ -25,7 +25,7 @@ app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 const azure=require('azure-storage');
-const blobconnectionstring='DefaultEndpointsProtocol=https;AccountName=databoxstorage;AccountKey=6RekG3MKy+4ABctpZcsy7vaRCrFGnvhWOQ3D+hDBcg1CfB/Dtll61YszErcHnOYWDlPUxlCMA7w3VM0N5q2CUQ==;EndpointSuffix=core.windows.net';
+const blobconnectionstring='DefaultEndpointsProtocol=https;AccountName=databoxstorage;AccountKey=[BlobContainerAccessKey]==;EndpointSuffix=core.windows.net';
 
 //const multer=require('multer');
 //npm install fs
@@ -172,7 +172,7 @@ app.get('/', (request, response) => {
 
 const EventHubClient = require('azure-event-hubs').Client;
 
-var connectionString = 'HostName=DataBoxHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=RAx6yZ/8axyQyTo03MSzjFvxPNYRZkXUkIzAC+Mh9I0=';
+var connectionString = 'HostName=DataBoxHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=[HubAccessKey]=';
 
 var printError = function (err) {
   console.log(err.message);
